@@ -201,6 +201,8 @@ p{
     .header-contenedor{
         display: flex;
         flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
     }
     .header-text{
         padding-left: 20px;
@@ -293,10 +295,12 @@ p{
     border: 2px solid var(--bg-color);
 }
 
-@MEDIA(max-width: 1300px){
+@MEDIA(max-width: 800px){
     .baner-3{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+align-items: center;
         height: 600px;
     }
     .banner-contenedor{
@@ -329,7 +333,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -338,22 +342,37 @@ p{
     text-align: center;
     text-decoration: 2px underline var(--secundary-color);
     padding-bottom: 35px;
+    margin-top: 25px;
 }
 .card-review{
     width: 800px;
 }
 
 .review-info-card{
-    margin-left: 20%;
+    margin: 20PX;
+    
 }
+.estrellas {
+    padding-left: 20px;
+    font-size: 20px;  /* Tamaño de las estrellas */
+    margin-right: 5px;  /* Espaciado entre las estrellas */
+    color: gold;  /* Color dorado para las estrellas llenas */
+  }
+  
 
 @media(max-width: 800px){
     .card-review{
-        width: 96%;
-        
+        width: 96%;        
     }
-}
+    .reviews{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 
+}
 
 
 
@@ -588,15 +607,15 @@ p{
 /* estilo tienda  */
 
 /* General */
-header {
-    background-color: #282c34;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 350px;
-}
+
+
+
+
+
+
+
+
+
 
 header nav ul {
     list-style: none;
