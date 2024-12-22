@@ -42,6 +42,7 @@ nav ul li{
 nav ul li a{
     color: var(--bg-color);
     text-decoration: none;
+    font-size: 20px;
 }
 
 nav ul li a:hover{
@@ -64,11 +65,29 @@ nav ul li a:hover{
     max-width: 500px;
     color: white;
 }
-.enlace-header{
-   margin-top: 70px;
-   
-}
+.enlace-header {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+ }
+ 
+ @media (max-width: 470px) and (min-width: 340px) {
+     .enlace-header {
+         flex-direction: column; /* Corrige a flex-direction */
+         justify-content: center;
+         align-items: center;
+     }
 
+     .header-subtitulo {
+        font-size: 2rem; /* Tamaño base del título */
+        font-weight: bold; /* Hace el título más destacado */
+        text-align: center; /* Centra el texto */
+        margin: 0;
+        color: white; /* Ajusta el color según el diseño */
+    }
+    
+ }
+ 
 
 .btn {
     color: white;
@@ -86,12 +105,17 @@ nav ul li a:hover{
 
 }
 .header-titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
     font-size: 45px ;
     margin-bottom: 10px;
+    margin-left: 30px;
     color: white;
 }
 .header-subtitulo{
-    font-size: 90px;
+    font-size: 70px;
     margin-bottom: 30px
 }
 p{
@@ -209,17 +233,19 @@ p{
         padding-left: 20px;
         padding-bottom: 50px;
     }
-    .header-titulo{
-        font-size: 30px;
-    }
     .header-subtitulo{
-        font-size: 67px;
+        font-size: 50px;
+        padding-left: 7px;
     }
+    
     .img-header-compu{
         width: 95%;
         height: 100%;
         max-width: 450px;
     }
+}
+@media(max-width:370){
+
 }
 
 @MEDIA(max-width: 1200px){
@@ -275,6 +301,7 @@ p{
     color: var(--bg-color);
     font-size: 20px;
     padding-bottom: 10px;
+    padding-left: 20px;
 }
 .banner-subtitulo{
     color: var(--bg-color);
@@ -282,6 +309,7 @@ p{
     letter-spacing: 3px;
     text-align: left;
     padding-bottom: 10px;
+    padding-left: 20px;
 }
 .btn-banner{
     background-color: var(--secundary-color);
@@ -295,14 +323,21 @@ p{
 .btn-banner:hover{
     border: 2px solid var(--bg-color);
 }
+.img-banner-compu{
+    width: 50%;
+    height: 0%;
+    max-width: 450px;
+    margin-right: 20px;
+}
 
 @MEDIA(max-width: 800px){
     .baner-3{
         display: flex;
         flex-direction: column;
         justify-content: center;
-align-items: center;
+        align-items: center;
         height: 600px;
+        padding: 20px;
     }
     .banner-contenedor{
         padding-left: 10px;
@@ -325,10 +360,11 @@ align-items: center;
         width: 95%;
         height: 100%;
         max-width: 450px;
-        margin-bottom: 85px;
+        margin-bottom: 55px;
     }
     
 }
+@MEDIA(max-width: 1300){}
 /* review */
 .reviews{
     display: flex;
@@ -337,6 +373,7 @@ align-items: center;
     flex-direction: row;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin: 20px;
 }
 .card-titulo{
     text-transform: uppercase;
@@ -605,13 +642,8 @@ align-items: center;
 
 
 }
-/* estilo tienda  */
 
-/* General */
-
-
-
-
+/* paguina tienda */
 
 
 
@@ -695,7 +727,7 @@ footer {
     margin-top: 20px;
 }
 
-/* paguina tienda */
+
 .header-tienda{
     min-height: 45vh;
 }
@@ -712,4 +744,16 @@ footer {
     align-items: center;
 
     
+}
+@media (max-width: 600px) {
+    .productos-grid {
+        display: flex; /* Cambia a flexbox */
+        flex-direction: column; /* Apila los elementos verticalmente */
+        gap: 15px; /* Espaciado entre productos */
+        padding: 10px; /* Ajusta el padding si es necesario */
+    }
+
+    .producto {
+        width: 100%; /* Asegúrate de que cada producto ocupe el ancho completo */
+    }
 }
