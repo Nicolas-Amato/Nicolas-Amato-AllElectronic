@@ -657,7 +657,7 @@ header nav ul {
 }
 
 header nav ul li {
-    display: none;
+    display: inline;
 }
 
 header nav ul li a {
@@ -715,8 +715,18 @@ header nav ul li a {
 .producto button:hover {
     background-color: #218838;
 }
+
+footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
 .header-tienda{
-    min-height: 35vh;
+    min-height: 45vh;
 }
 .header-contenedor-tienda{
     display: flex;
