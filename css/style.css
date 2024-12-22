@@ -392,9 +392,9 @@ p{
 }
 .estrellas {
     padding-left: 20px;
-    font-size: 20px;  /* Tamaño de las estrellas */
-    margin-right: 5px;  /* Espaciado entre las estrellas */
-    color: gold;  /* Color dorado para las estrellas llenas */
+    font-size: 20px; 
+    margin-right: 5px;  
+    color: gold; 
   }
   
 
@@ -747,13 +747,55 @@ footer {
 }
 @media (max-width: 600px) {
     .productos-grid {
-        display: flex; /* Cambia a flexbox */
-        flex-direction: column; /* Apila los elementos verticalmente */
-        gap: 15px; /* Espaciado entre productos */
-        padding: 10px; /* Ajusta el padding si es necesario */
+        display: flex; 
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 10px; 
     }
 
     .producto {
-        width: 100%; /* Asegúrate de que cada producto ocupe el ancho completo */
+        width: 100%; 
     }
+}
+/**---------------------------------------popup----------------------------------------------/
+/* Estilo básico para el popup */
+.menu-mobile {
+    display: block;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    max-width: 80%;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+/* Fondo oscuro al abrir el popup */
+body.popup-open {
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.close-btn {
+    margin-top: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #ff1a1a;
 }

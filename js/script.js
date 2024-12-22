@@ -85,13 +85,5 @@ for (let i = 0; i < resenas.length; i++) {
   `;
   
 };
-console.log(resenaHtml)
-
 // Asigna el contenido generado al contenedor
 resenaContainer.innerHTML = resenaHtml;
-
-
-
-
-
-

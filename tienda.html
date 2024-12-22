@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda - AllElectronicx</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
+   
 </head>
 <body>
     <header class="header-tienda">
         <nav>
             <img src="img/logo.png" alt="logo">
             <ul class="menu-screen">
-                <li><a href="index.html">ome</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Contacto</a></li>
+                <!--<button id="cart-button">Carrito (<span id="cart-count">0</span>)</button>-->
                 <button id="cart-button">Carrito (<span id="cart-count">0</span>)</button>
+
+                
             </ul>
-            <img class="menu-mobile" src="img/menu_icon.png" width="36" height="21 " alt="menu desplegable">
         </nav>          
         <div class="header-contenedor-tienda">
             <h3 class="header-titulo">Envío rápido y garantía asegurada en todos nuestros productos</h3>
@@ -102,6 +104,14 @@
             </div>
             <!-- Añade más productos aquí -->
         </div>
+        <div id="cart-popup" class="hidden">
+            <div class="popup-content">
+              <h2>Tu Carrito</h2>
+              <div id="cart-items"></div>
+              <button id="close-popup">Cerrar</button>
+            </div>
+          </div>
+    
     </main>
     <footer class="footer">
         <div class="footer-menu">
@@ -139,5 +149,6 @@
         </div>
         
     </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>
