@@ -1,35 +1,124 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || []; // Recuperar el carrito desde localStorage
-    const cartCountElement = document.getElementById('cart-count');
-    updateCartCount();
+  const cart = JSON.parse(localStorage.getItem('cart')) || []; // Recuperar el carrito desde localStorage
+  const cartCountElement = document.getElementById('cart-count');
+  const cartButton = document.getElementById('cart-button');
+  updateCartCount();
 
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', event => {
-            const productElement = event.target.closest('.producto');
-            const product = {
-                name: productElement.querySelector('h3').textContent,
-                price: parseFloat(productElement.querySelector('p:nth-of-type(1)').textContent.replace('Precio: $', '').trim()),
-                description: productElement.querySelector('p:nth-of-type(2)').textContent,
-            };
-            cart.push(product); // Agregar el producto al carrito
+  addToCartButtons.forEach(button => {
+      button.addEventListener('click', event => {
+          const productElement = event.target.closest('.producto');
 
-            localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito en localStorage
-            alert(`Agregado al carrito: ${product.name}`);
+          if (!productElement) {
+              console.error('No se encontró el elemento del producto.');
+              return;
+          }
 
-            updateCartCount(); // Actualizar el contador del carrito
-            console.log(cart); // Verificar el carrito en la consola
-        });
-    });
+          const name = productElement.querySelector('h3')?.textContent.trim();
+          const priceText = productElement.querySelector('.price')?.textContent.trim();
+          const description = productElement.querySelector('p:nth-of-type(2)')?.textContent.trim();
 
-    function updateCartCount() {
-        cartCountElement.textContent = cart.length; // Actualiza el número de productos en el carrito
-    }
+          if (!name || !priceText || !description) {
+              console.error('Faltan datos en el producto. Verifica la estructura HTML.');
+              return;
+          }
+
+          const product = {
+              name: name,
+              price: parseFloat(priceText.replace('Precio: $', '')),
+              description: description,
+          };
+
+          Swal.fire({
+              title: '¿Deseas agregar este producto?',
+              text: `Nombre: "${product.name}"`,
+              icon: 'question',
+              showCancelButton: true,
+              confirmButtonText: 'Sí, agregar',
+              cancelButtonText: 'No, gracias',
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  cart.push(product);
+                  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito en localStorage
+
+                  Swal.fire(
+                      '¡Agregado!',
+                      `${product.name} ha sido añadido a tu carrito.`,
+                      'success'
+                  );
+                  updateCartCount();
+              } else if (result.dismiss === Swal.DismissReason.cancel) {
+                  Swal.fire(
+                      'Cancelado',
+                      'El producto no fue añadido a tu carrito.',
+                      'error'
+                  );
+              }
+          });
+      });
+  });
+
+  function updateCartCount() {
+      if (cartCountElement) {
+          cartCountElement.textContent = cart.length;
+      }
+  }
+
+  if (cartButton) {
+      cartButton.addEventListener('click', () => {
+          if (cart.length === 0) {
+              Swal.fire({
+                  title: 'Tu carrito está vacío',
+                  text: 'Agrega productos para verlos aquí.',
+                  icon: 'info',
+                  confirmButtonText: 'Aceptar',
+              });
+              return;
+          }
+
+          const productListHTML = cart.map(product => `
+              <li>
+                  <strong>${product.name}</strong>
+                  <br><small>${product.description}</small>
+                  <strong>$ ${product.price}</strong>
+              </li>
+          `).join('');
+
+          const total = cart.reduce((sum, product) => sum + product.price, 0);
+
+          Swal.fire({
+              title: 'Tu carrito de compras',
+              html: `
+                  <ul style="text-align: left; list-style: none; padding: 0;">
+                      ${productListHTML}
+                  </ul>
+                  <p><strong>Total:</strong> $${total.toFixed(2)}</p>
+              `,
+              icon: 'info',
+              showCancelButton: true,
+              confirmButtonText: 'Cerrar',
+              cancelButtonText: 'Vaciar carrito',
+          }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.cancel) {
+                  cart.length = 0; // Vacía el contenido del carrito
+                  localStorage.setItem('cart', JSON.stringify(cart)); // Actualiza el localStorage
+                  Swal.fire(
+                      'Carrito vacío',
+                      'Todos los productos han sido eliminados de tu carrito.',
+                      'success'
+                  );
+                  updateCartCount(); // Actualizar el contador
+              }
+          });
+      });
+  }
 });
 
 
-//-------------------RESENAS-------------------------
+
+
+//-----------------RESENAS-------------------------
 const resenas = [
   {
     producto: "Laptop de Alta Gama",

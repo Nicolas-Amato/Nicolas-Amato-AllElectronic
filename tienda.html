@@ -14,10 +14,7 @@
             <ul class="menu-screen">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Contacto</a></li>
-                <!--<button id="cart-button">Carrito (<span id="cart-count">0</span>)</button>-->
-                <button id="cart-button">Carrito (<span id="cart-count">0</span>)</button>
-
-                
+                <img   id="cart-button" src="/img/pngegg(3).png" width="50" height="40"><span id="cart-count" style="color: white;">0</span>                
             </ul>
         </nav>          
         <div class="header-contenedor-tienda">
@@ -35,16 +32,16 @@
             <!-- Producto 1 -->
             <div class="producto">
                 <img src="img/product1.png" alt="Teclado Mecánico">
-                <h3>Teclado Mecánico</h3>
-                <p>Precio: $50</p>
+                <h3>Teclado Mgamer</h3>
+                <p class="price">Precio: $50</p>
                 <p>Teclado mecánico de alta calidad para gamers y programadores.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
             <!-- Producto 2 -->
             <div class="producto">
                 <img src="img/product2.png" alt="Mouse Inalámbrico">
-                <h3>Mouse Inalámbrico</h3>
-                <p>Precio: $20</p>
+                <h3>Mouse Gamer</h3>
+                <p class="price">Precio: $80</p>
                 <p>Mouse ergonómico inalámbrico con alta precisión y diseño moderno.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
@@ -52,14 +49,14 @@
             <div class="producto">
                 <img src="img/product3.png" alt="Tablet">
                 <h3>Tablet</h3>
-                <p>Precio: $120</p>
+                <p class="price">Precio: $50</p>
                 <p>Tablet ligera y potente con pantalla Full HD para todas tus necesidades.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/product4.png" alt="Teclado Mecánico">
                 <h3>Teclado Mecánico</h3>
-                <p>Precio: $50</p>
+                <p class="price">Precio: $50</p>
                 <p>Teclado mecánico de alta calidad para gamers y programadores.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
@@ -67,7 +64,7 @@
             <div class="producto">
                 <img src="img/product5.png" alt="Mouse Inalámbrico">
                 <h3>Mouse Inalámbrico</h3>
-                <p>Precio: $20</p>
+                <p class="price">Precio: $50</p>
                 <p>Mouse ergonómico inalámbrico con alta precisión y diseño moderno.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
@@ -75,14 +72,14 @@
             <div class="producto">
                 <img src="img/product6.png" alt="Tablet">
                 <h3>Tablet</h3>
-                <p>Precio: $120</p>
+                <p class="price">Precio: $50</p>
                 <p>Tablet ligera y potente con pantalla Full HD para todas tus necesidades.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/product7.png" alt="Teclado Mecánico">
                 <h3>Teclado Mecánico</h3>
-                <p>Precio: $50</p>
+                <p class="price">Precio: $50</p>
                 <p>Teclado mecánico de alta calidad para gamers y programadores.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
@@ -90,7 +87,7 @@
             <div class="producto">
                 <img src="img/product8.png" alt="Mouse Inalámbrico">
                 <h3>Mouse Inalámbrico</h3>
-                <p>Precio: $20</p>
+                <p class="price">Precio: $50</p>
                 <p>Mouse ergonómico inalámbrico con alta precisión y diseño moderno.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
@@ -98,20 +95,12 @@
             <div class="producto">
                 <img src="img/product9.png" alt="Tablet">
                 <h3>Tablet</h3>
-                <p>Precio: $120</p>
+                <p class="price">Precio: $50</p>
                 <p>Tablet ligera y potente con pantalla Full HD para todas tus necesidades.</p>
                 <button class="add-to-cart">Agregar al carrito</button>
             </div>
             <!-- Añade más productos aquí -->
-        </div>
-        <div id="cart-popup" class="hidden">
-            <div class="popup-content">
-              <h2>Tu Carrito</h2>
-              <div id="cart-items"></div>
-              <button id="close-popup">Cerrar</button>
-            </div>
-          </div>
-    
+        </div>    
     </main>
     <footer class="footer">
         <div class="footer-menu">
@@ -150,5 +139,7 @@
         
     </footer>
     <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
