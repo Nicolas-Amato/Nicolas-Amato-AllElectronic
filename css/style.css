@@ -22,7 +22,7 @@ header{
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    min-height: 85vh;
+    min-height: 65vh;
 }
 
 nav{
@@ -88,6 +88,7 @@ nav ul li a:hover{
 .header-titulo{
     font-size: 45px ;
     margin-bottom: 10px;
+    color: white;
 }
 .header-subtitulo{
     font-size: 90px;
@@ -695,7 +696,20 @@ footer {
 }
 
 /* paguina tienda */
+.header-tienda{
+    min-height: 45vh;
+}
+.header-contenedor-tienda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header-text-tienda{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
-.header-shop{
-    height: 100px;
+    
 }
