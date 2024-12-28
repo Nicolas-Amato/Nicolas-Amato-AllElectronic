@@ -1,5 +1,85 @@
+//---------------------PRODUCTOS-------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const productosVenta = [
+        {
+            nombre: "Teclado Mecánico",
+            precio: 1800,
+            descripcion: "Teclado mecánico de alta calidad para gamers y programadores.",
+            imagen: "img/product1.png"
+        },
+        {
+            nombre: "Mouse Gamer",
+            precio: 1500,
+            descripcion: "Mouse ergonómico inalámbrico con alta precisión y diseño moderno.",
+            imagen: "img/product2.png"
+        },
+        {
+            nombre: "Webcam de Alta Gama",
+            precio: 800,
+            descripcion: "Laptop de última generación con procesador Intel Core i9, 16 GB de RAM y SSD de 1 TB.",
+            imagen: "img/product3.png"
+        },
+        {
+            nombre: "Tablet Android",
+            precio: 2500,
+            descripcion: "Tablet ligera y potente con pantalla Full HD para todas tus necesidades.",
+            imagen: "img/product4.png"
+        },
+        {
+            nombre: "Disco Mecánico",
+            precio: 1200,
+            descripcion: "Discos duros mecánicos de 1 TB para almacenar todos tus archivos.",
+            imagen: "img/product6.png"
+        },
+        {
+            nombre: "Moden Inalámbrico",
+            precio: 1500,
+            descripcion: "Modelo de alta velocidad para una conexión estable y segura.",
+            imagen: "img/product5.png"
+        },
+        {
+            nombre: "Memorias Ram",
+            precio: 1500,
+            descripcion: "Memoria RAM DDR4 de 16 GB para mejorar el rendimiento de tu PC.",
+            imagen: "img/product7.png"
+        },
+        {
+            nombre: "Bateria de Laptop",
+            precio: 1500,
+            descripcion: "Bateria original para tu laptop con una duración de hasta 8 horas.",
+            imagen: "img/product8.png"
+        },
+        {
+            nombre: "Lectora portable",
+            precio: 1300,
+            descripcion: "Lectora de tarjetas SD y microSD para transferir tus archivos de manera rápida y segura.",
+            imagen: "img/product9.png"
+        },
+    
+    ];
+    
+    let productosHtml = "";
+    const productosContainer = document.getElementById("producto");
+    print(productosVenta);
+    
+    for(i = 0; i < productosVenta.length; i++){                                                                                              
+        productosHtml += `
+        <div class="producto">
+            <img src="${productosVenta[i].imagen}">
+            <h3>${productosVenta[i].nombre}</h3>
+            <p>${productosVenta[i].descripcion}</p>
+            <p class="price">Precio: $${productosVenta[i].precio}</p>
+            <button class="add-to-cart">Agregar al carrito</button>
+        </div>
+        `;
+    }
+    productosContainer.innerHTML = productosHtml;
+    });
+
+
+//------------------------CARRITO---------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  const cart = JSON.parse(localStorage.getItem('cart')) || []; // Recuperar el carrito desde localStorage
+  const cart = JSON.parse(localStorage.getItem('cart')) || []; 
   const cartCountElement = document.getElementById('cart-count');
   const cartButton = document.getElementById('cart-button');
   updateCartCount();
@@ -175,4 +255,7 @@ for (let i = 0; i < resenas.length; i++) {
   
 };
 // Asigna el contenido generado al contenedor
-resenaContainer.innerHTML = resenaHtml;
+resenaContainer.innerHTML =  resenaHtml;
+
+
+                                               
