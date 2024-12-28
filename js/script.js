@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let productosHtml = "";
     const productosContainer = document.getElementById("producto");
-    print(productosVenta);
+  
     
     for(i = 0; i < productosVenta.length; i++){                                                                                              
         productosHtml += `
